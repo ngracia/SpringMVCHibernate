@@ -1,7 +1,6 @@
 /**
  * Created by Nestor Gracia on 25/05/2016.
  */
-
 package com.ngracia.spring.dao;
 
 import com.ngracia.spring.dto.RequestResponseDto;
