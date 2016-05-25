@@ -47,7 +47,7 @@ public class User {
         this.password = password;
     }
 
-    public boolean setIsEnable() {
+    public boolean getIsEnable() {
         return isEnable;
     }
 

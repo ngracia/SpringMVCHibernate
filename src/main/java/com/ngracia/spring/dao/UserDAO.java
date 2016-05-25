@@ -1,13 +1,18 @@
-package com.ngracia.spring.dao;
-
-import com.ngracia.spring.model.User;
-
 /**
  * Created by Nestor Gracia on 25/05/2016.
  */
+
+package com.ngracia.spring.dao;
+
+import com.ngracia.spring.dto.RequestResponseDto;
+import com.ngracia.spring.dto.UserDto;
+import com.ngracia.spring.model.User;
+import java.util.List;
+
 public interface UserDAO {
-    public void addUser(User user);
-    public void updateUser(User user);
-    public boolean getUser(String id);
-    public boolean getLogin(String userName, String password);
+    void addUser(User user);
+    void updateUser(User user);
+    boolean getUser(String id);
+    RequestResponseDto getLogin(String userName, String password);
+    List<UserDto> getUsersList();
 }

@@ -1,36 +1,87 @@
+/**
+ * Created by Nestor Gracia on 25/05/2016.
+ */
 package com.ngracia.spring.dao;
 
+import com.ngracia.spring.dto.RequestResponseDto;
+import com.ngracia.spring.dto.UserDto;
 import com.ngracia.spring.model.User;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by Nestor Gracia on 25/05/2016.
- */
+@Repository
 public class UserDAOImpl implements UserDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);
+
+    @Autowired
     private SessionFactory sessionFactory;
 
-    public UserDAOImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    @SuppressWarnings("unchecked")
+    @Transactional
+        public void addUser(User user) {
+            try{
+                throw new NotImplementedException();
+            }catch (Exception ex){
 
-    public void addUser(User user) {
+            }
+        }
 
-    }
+        public void updateUser(User user) {
+            try{
+                throw new NotImplementedException();
+            }catch (Exception ex){
 
-    public void updateUser(User user) {
+            }
+        }
 
-    }
+        public boolean getUser(String id) {
+            try{
 
-    public boolean getUser(String id) {
-        return false;
-    }
 
-    public boolean getLogin(String userName, String password) {
-        return false;
-    }
+            }catch (Exception ex){
+
+            }
+            throw new NotImplementedException();
+        }
+
+        public RequestResponseDto getLogin(String userName, String password) {
+            try{
+
+            }catch (Exception ex){
+
+            }
+            throw new NotImplementedException();
+        }
+
+        public List<UserDto> getUsersList() {
+            List<User> userList = new ArrayList<>();
+            List<UserDto> userListDto = new ArrayList<>();
+
+            try{
+                userList = sessionFactory.getCurrentSession().createQuery("from User").list();
+
+                for(User user : userList){
+                    UserDto userDto = new UserDto();
+                    userDto.setId(user.getId());
+                    userDto.setName(user.getName());
+                    userDto.setEnable(user.getIsEnable());
+                    userListDto.add(userDto);
+                }
+
+                logger.info("Success: UserDao.GetUsersList");
+
+            }catch (Exception ex){
+                logger.error("Failed: UserDao.GetUsersList");
+            }
+            return userListDto;
+        }
 }
