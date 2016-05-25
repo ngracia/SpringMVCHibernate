@@ -13,7 +13,8 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class UserController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String init(ModelMap modelMap) trows NotImplementedException {
-        throw new NotImplementedException;
+    public String init(ModelMap modelMap) {
+        throw new NotImplementedException();
     }
 }
+
