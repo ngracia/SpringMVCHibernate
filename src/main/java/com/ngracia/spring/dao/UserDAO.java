@@ -8,7 +8,7 @@ import com.ngracia.spring.dto.UserDto;
 import com.ngracia.spring.model.User;
 import java.util.List;
 
-public interface UserDAO {
+public interface UserDao {
     void addUser(User user);
     void updateUser(User user);
     boolean getUser(String id);
