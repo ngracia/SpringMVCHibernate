@@ -36,7 +36,6 @@ public class HibernateConfiguration {
         return sessionFactory;
     }
 
-
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));

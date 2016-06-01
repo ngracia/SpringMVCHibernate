@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class UserDAOImpl implements UserDAO {
+public class UserDaoImpl implements UserDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
     @Autowired
     private SessionFactory sessionFactory;

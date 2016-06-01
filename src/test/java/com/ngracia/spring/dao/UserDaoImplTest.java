@@ -7,13 +7,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * Created by Nestor Gracia on 31/05/2016.
+ * Created by Nestor Gracia on 01/06/2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-public class UserDaoTest {
+public class UserDaoImplTest {
+
 
     @Autowired
     private UserDao dao;
+
+    @Test
+    public void addUser() throws Exception {
+
+    }
+
+    @Test
+    public void updateUser() throws Exception {
+
+    }
+
+    @Test
+    public void getUser() throws Exception {
+
+    }
+
+    @Test
+    public void getLogin() throws Exception {
+
+    }
 
     @Test
     public void getUsersList() {
