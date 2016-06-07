@@ -1,18 +1,24 @@
-/**
- * Created by Nestor Gracia on 25/05/2016.
- */
-package com.ngracia.spring.dao;
+package com.ngracia.spring.service;
 
 import com.ngracia.spring.dto.RequestResponseDto;
 import com.ngracia.spring.dto.UserDto;
 import com.ngracia.spring.model.User;
 import java.util.List;
 
-public interface UserDao {
+/**
+ * Created by Nestor Gracia on 02/06/2016.
+ */
+public interface UserService {
+
     void addUser(User user);
+
     void updateUser(User user);
-    boolean getUserById(String id);
+
+    boolean getUser(String id);
+
     boolean LogIn(String userName, String password);
+
     RequestResponseDto LogOut(String userName, String password);
+
     List<UserDto> getUsersList();
 }

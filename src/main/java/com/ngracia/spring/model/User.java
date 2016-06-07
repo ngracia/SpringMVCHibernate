@@ -9,10 +9,12 @@ import javax.persistence.*;
 @Table(name = "person")
 public class User {
 
+    private static final long	serialVersionUID	= 1L;
+
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name="name")
     private String name;
@@ -54,16 +56,5 @@ public class User {
     public void setIsEnable(boolean isEnable) {
         this.isEnable = isEnable;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", isEnable=" + isEnable +
-                '}';
-    }
-
 
 }
