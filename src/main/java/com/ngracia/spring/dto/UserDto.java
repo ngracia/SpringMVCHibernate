@@ -8,10 +8,10 @@ public class UserDto {
     private int id;
     private String name;
     private boolean isEnable;
-
-    public boolean isEnable() {
-        return isEnable;
-    }
+    private String password;
+    
+    
+    public boolean getEnable() {return isEnable;}
 
     public void setEnable(boolean enable) {
         isEnable = enable;
@@ -33,4 +33,11 @@ public class UserDto {
         this.name = name;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

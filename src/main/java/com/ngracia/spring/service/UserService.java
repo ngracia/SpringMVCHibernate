@@ -14,9 +14,9 @@ public interface UserService {
 
     void delete(int id);
 
-    void updateUser(int id);
+    void updateUser(UserDto userDto);
 
-    boolean getUser(int id);
+    UserDto getUser(int id);
 
     boolean LogIn(String userName, String password);
 

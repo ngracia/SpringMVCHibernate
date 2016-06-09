@@ -29,14 +29,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void updateUser(int id) {
-        userDao.updateUser(id);
+    public void updateUser(UserDto userDto) {
+        userDao.updateUser(userDto);
     }
 
     @Override
     @Transactional
-    public boolean getUser(int id) {
-        return false;
+    public UserDto getUser(int id) {
+        return userDao.getUserById(id);
     }
 
     @Override

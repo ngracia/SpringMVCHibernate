@@ -10,8 +10,9 @@ import java.util.List;
 
 public interface UserDao {
     void addUser(User user);
-    void updateUser(User user);
-    boolean getUserById(String id);
+    void updateUser(UserDto userDto);
+    void deleteUser(int id);
+    UserDto getUserById(int id);
     boolean LogIn(String userName, String password);
     RequestResponseDto LogOut(String userName, String password);
     List<UserDto> getUsersList();

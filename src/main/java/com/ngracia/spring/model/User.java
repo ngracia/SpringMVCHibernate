@@ -49,11 +49,9 @@ public class User {
         this.password = password;
     }
 
-    public boolean getIsEnable() {
-        return isEnable;
-    }
+    public boolean getEnable() {return isEnable;}
 
-    public void setIsEnable(boolean isEnable) {
+    public void setEnable(boolean isEnable) {
         this.isEnable = isEnable;
     }
 
