@@ -19,6 +19,8 @@
 		<tr>
 			<td>${user.id}</td>
 			<td>${user.name}</td>
+			<td><a href="<c:url value='/edit/${user.id}' />" >Edit</a></td>
+            <td><a href="<c:url value='/delete/${user.id}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 	</table>

@@ -2,7 +2,7 @@ package com.ngracia.spring.service;
 
 import com.ngracia.spring.dto.RequestResponseDto;
 import com.ngracia.spring.dto.UserDto;
-import com.ngracia.spring.model.User;
+
 import java.util.List;
 
 /**
@@ -10,11 +10,13 @@ import java.util.List;
  */
 public interface UserService {
 
-    void addUser(User user);
+    void addUser(int id);
 
-    void updateUser(User user);
+    void delete(int id);
 
-    boolean getUser(String id);
+    void updateUser(int id);
+
+    boolean getUser(int id);
 
     boolean LogIn(String userName, String password);
 

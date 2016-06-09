@@ -3,7 +3,6 @@ package com.ngracia.spring.service;
 import com.ngracia.spring.dao.UserDao;
 import com.ngracia.spring.dto.RequestResponseDto;
 import com.ngracia.spring.dto.UserDto;
-import com.ngracia.spring.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,19 +18,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void addUser(User user) {
+    public void delete(int id) {
+        userDao.deleteUser(id);
+    }
+
+    @Override
+    public void addUser(int id) {
 
     }
 
     @Override
     @Transactional
-    public void updateUser(User user) {
-
+    public void updateUser(int id) {
+        userDao.updateUser(id);
     }
 
     @Override
     @Transactional
-    public boolean getUser(String id) {
+    public boolean getUser(int id) {
         return false;
     }
 

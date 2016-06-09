@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,6 +38,20 @@ public class UserController {
     public String UserList(Model model) {
         model.addAttribute("listUsers", userService.getUsersList());
         return "UserList";
+    }
+
+    @RequestMapping(value = {"/edit/{id}"}, method = RequestMethod.GET)
+    public String editUser(@PathVariable("id") int id, Model model){
+        userService.addUser(id);
+        model.addAttribute("listUsers", userService.getUsersList());
+        return "redirect:/UserList";
+    }
+
+    @RequestMapping(value = {"/delete/{id}"}, method = RequestMethod.GET)
+    public String deleteUser(@PathVariable("id") int id, Model model){
+        userService.delete(id);
+        model.addAttribute("ListUsers", userService.getUsersList());
+        return "redirect:/UserList";
     }
 }
 
