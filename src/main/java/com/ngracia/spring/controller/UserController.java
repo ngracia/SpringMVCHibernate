@@ -1,5 +1,6 @@
 package com.ngracia.spring.controller;
 
+import com.ngracia.spring.dto.UserDto;
 import com.ngracia.spring.model.User;
 import com.ngracia.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,17 +41,22 @@ public class UserController {
         return "UserList";
     }
 
-    @RequestMapping(value = {"/edit/{id}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/Edit/{id}"}, method = RequestMethod.GET)
     public String editUser(@PathVariable("id") int id, Model model){
-        userService.addUser(id);
-        model.addAttribute("listUsers", userService.getUsersList());
-        return "redirect:/UserList";
+        model.addAttribute("userDetails", userService.getUser(id));
+        return "EditUser";
     }
 
-    @RequestMapping(value = {"/delete/{id}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/Delete/{id}"}, method = RequestMethod.GET)
     public String deleteUser(@PathVariable("id") int id, Model model){
         userService.delete(id);
         model.addAttribute("ListUsers", userService.getUsersList());
+        return "redirect:/UserList";
+    }
+
+    @RequestMapping(value = {"/Edit"}, method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("userDetails") UserDto userDto, Model model){
+        userService.updateUser(userDto);
         return "redirect:/UserList";
     }
 }
