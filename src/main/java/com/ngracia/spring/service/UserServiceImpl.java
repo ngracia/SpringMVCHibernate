@@ -4,6 +4,7 @@ import com.ngracia.spring.dao.UserDao;
 import com.ngracia.spring.dto.RequestResponseDto;
 import com.ngracia.spring.dto.UserDto;
 import com.ngracia.spring.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -11,13 +12,10 @@ import java.util.List;
 /**
  * Created by Nestor Gracia on 02/06/2016.
  */
-public class UserServiceImp implements UserService {
+public class UserServiceImpl implements UserService {
 
+    @Autowired
     private UserDao userDao;
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
 
     @Override
     @Transactional

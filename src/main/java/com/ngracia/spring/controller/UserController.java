@@ -3,7 +3,6 @@ package com.ngracia.spring.controller;
 import com.ngracia.spring.model.User;
 import com.ngracia.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,14 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class UserController {
 
-
+    @Autowired
     private UserService userService;
-
-    @Autowired(required=true)
-    @Qualifier(value="userService")
-    public void setUserService(UserService ps){
-        this.userService = ps;
-    }
 
 
     @RequestMapping(value = { "/" }, method = RequestMethod.GET)
@@ -32,8 +25,8 @@ public class UserController {
     }
 
     @RequestMapping(value= {"/Login"}, method=RequestMethod.POST)
-    public String Login(@ModelAttribute("user") User p) {
-        boolean result = userService.LogIn(p.getName(), p.getPassword());
+    public String Login(@ModelAttribute("user") User u) {
+        boolean result = userService.LogIn(u.getName(), u.getPassword());
         if (result){
             return "redirect:/UserList";
         }
@@ -43,9 +36,8 @@ public class UserController {
     @RequestMapping(value = { "/UserList" }, method = RequestMethod.GET)
     public String UserList(Model model) {
         model.addAttribute("listUsers", userService.getUsersList());
-        return "UsersListView";
+        return "UserList";
     }
-
 }
 
 
