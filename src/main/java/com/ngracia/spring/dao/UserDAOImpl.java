@@ -7,6 +7,7 @@ import com.ngracia.spring.dto.RequestResponseDto;
 import com.ngracia.spring.dto.UserDto;
 import com.ngracia.spring.model.User;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,30 +29,67 @@ public class UserDaoImpl implements UserDao {
     @SuppressWarnings("unchecked")
     public void addUser(User user) {
         try{
-            throw new NotImplementedException();
+            logger.info("Success: UserDao.addUser");
         }catch (Exception ex){
-
+            logger.error("Success: UserDao.addUser");
         }
     }
 
     @Override
-    public void updateUser(User user) {
+    public void updateUser(UserDto userDto) {
         try{
-            throw new NotImplementedException();
-        }catch (Exception ex){
+            Session session;
+            User user = new User();
 
+            session = sessionFactory.getCurrentSession();
+
+
+            user.setId(userDto.getId());
+            user.setPassword(userDto.getPassword());
+            user.setEnable(userDto.getEnable());
+            user.setName(userDto.getName());
+
+            session.update(user);
+            session.flush();
+            logger.info("Success: UserDao.updateUser");
+
+        }catch (Exception ex){
+            logger.error("Failed: UserDao.updateUser: " + ex);
         }
     }
 
     @Override
-    public boolean getUserById(String id) {
+    public void deleteUser(int id) {
+        try{
+            Session session;
+            session = sessionFactory.getCurrentSession();
+            User user = (User)session.load(User.class, id);
+            session.delete(user);
+            logger.info("Success: UserDao.deleteUser");
+        }catch(Exception ex){
+            logger.error("Failed: UserDao.deleteUser: " + ex);
+        }
+    }
+
+    @Override
+    public UserDto getUserById(int id) {
+        UserDto userDto = new UserDto();
         try{
 
+            Session session;
+            session = sessionFactory.getCurrentSession();
+            User user = (User)session.load(User.class, id);
+
+            userDto.setName(user.getName());
+            userDto.setId(user.getId());
+            userDto.setEnable(user.getEnable());
+            userDto.setPassword(user.getPassword());
+            logger.info("Success : UserDao.getUserById");
 
         }catch (Exception ex){
-
+            logger.error("Failure : User.getUserById " + ex.getMessage());
         }
-        throw new NotImplementedException();
+        return userDto;
     }
 
     @Override
@@ -68,7 +106,7 @@ public class UserDaoImpl implements UserDao {
             }
 
         }catch (Exception ex ){
-            logger.error("Failed: UserDao.LogIn: " + ex);
+            logger.error("Failed: UserDao.LogIn: " + ex.getMessage());
         }
         return false;
     }
@@ -96,14 +134,14 @@ public class UserDaoImpl implements UserDao {
                 UserDto userDto = new UserDto();
                 userDto.setId(user.getId());
                 userDto.setName(user.getName());
-                userDto.setEnable(user.getIsEnable());
+                userDto.setEnable(user.getEnable());
                 userListDto.add(userDto);
             }
 
             logger.info("Success: UserDao.GetUsersList");
 
         }catch (Exception ex){
-            logger.error("Failed: UserDao.GetUsersList");
+            logger.error("Failed: UserDao.GetUsersList " + ex.getMessage());
         }
         return userListDto;
     }
