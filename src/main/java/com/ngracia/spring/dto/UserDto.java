@@ -11,11 +11,9 @@ public class UserDto {
     private String password;
     
     
-    public boolean getEnable() {return isEnable;}
+    public boolean getIsEnable() {return isEnable;}
 
-    public void setEnable(boolean enable) {
-        isEnable = enable;
-    }
+    public void setIsEnable(boolean isEnable) {this.isEnable = isEnable;}
 
     public int getId() {
         return id;

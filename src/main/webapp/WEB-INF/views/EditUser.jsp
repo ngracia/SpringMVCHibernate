@@ -12,12 +12,13 @@
    </head>
    <body>
       <div id="formsContent">
-           <h4>User Login.</h4>
+           <h4>Edit User.</h4>
            <c:url var="addAction" value="/Edit" ></c:url>
-           <form:form id="form" action="${addAction}" commandName="userDetails" onload="test()">
+           <form:form id="form" action="${addAction}" commandName="userDetails">
              <table>
                <tr><td>User Name:</td><td><input name="name" type="textbox" value=${userDetails.name}></td></tr>
                <tr><td>Password:</td><td><input name="password" type="textbox" value=${userDetails.password}></td></tr>
+               <tr><td>Enable:</td><td><input name="isEnable" type="checkbox" checked=${userDetails.isEnable}></td></tr>
                <tr><input name="id" type="hidden" value=${userDetails.id}></tr>
                <tr><td colspan="2" align="right"><input type="submit" value="Submit"></td></tr>
              </table>
@@ -26,9 +27,3 @@
       </div>
    </body>
 </html>
-
- <script>
-function test() {
-    alert("Image is loaded");
-}
- </script>
