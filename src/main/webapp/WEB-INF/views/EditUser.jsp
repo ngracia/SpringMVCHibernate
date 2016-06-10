@@ -3,16 +3,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="false" %>
+
 <html>
    <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <script type="text/javascript" src="/WEB-INF/js/jquery-3.0.0.min.js"></script>
        <title>Edit User.</title>
    </head>
    <body>
       <div id="formsContent">
            <h4>User Login.</h4>
            <c:url var="addAction" value="/Edit" ></c:url>
-           <form:form id="form" action="${addAction}" commandName="userDetails">
+           <form:form id="form" action="${addAction}" commandName="userDetails" onload="test()">
              <table>
                <tr><td>User Name:</td><td><input name="name" type="textbox" value=${userDetails.name}></td></tr>
                <tr><td>Password:</td><td><input name="password" type="textbox" value=${userDetails.password}></td></tr>
@@ -24,3 +26,9 @@
       </div>
    </body>
 </html>
+
+ <script>
+function test() {
+    alert("Image is loaded");
+}
+ </script>
