@@ -7,7 +7,7 @@
 <html>
    <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <script type="text/javascript" src="/WEB-INF/js/jquery-3.0.0.min.js"></script>
+       <script src="<c:url value="/resources/jquery-3.0.0.min.js" />"></script>
        <title>Edit User.</title>
    </head>
    <body>
