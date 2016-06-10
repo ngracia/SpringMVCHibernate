@@ -43,7 +43,12 @@ public class UserController {
 
     @RequestMapping(value = {"/Edit/{id}"}, method = RequestMethod.GET)
     public String editUser(@PathVariable("id") int id, Model model){
-        model.addAttribute("userDetails", userService.getUser(id));
+        if (id == 0){
+
+        }else {
+            model.addAttribute("userDetails", userService.getUser(id));
+        }
+
         return "EditUser";
     }
 
