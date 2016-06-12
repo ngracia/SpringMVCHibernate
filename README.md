@@ -1,7 +1,7 @@
 # SpringMVCHibernate
 Understanding Spring MVC &amp; Hibernate
 
-Frameworks and tools.
+#Frameworks and tools.
 
 IDE: Intellij
 
