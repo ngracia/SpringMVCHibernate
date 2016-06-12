@@ -46,7 +46,7 @@ public class UserDaoImpl implements UserDao {
 
             user.setId(userDto.getId());
             user.setPassword(userDto.getPassword());
-            user.setEnable(userDto.getEnable());
+            user.setIsEnable(userDto.getIsEnable());
             user.setName(userDto.getName());
 
             session.update(user);
@@ -82,7 +82,7 @@ public class UserDaoImpl implements UserDao {
 
             userDto.setName(user.getName());
             userDto.setId(user.getId());
-            userDto.setEnable(user.getEnable());
+            userDto.setIsEnable(user.getIsEnable());
             userDto.setPassword(user.getPassword());
             logger.info("Success : UserDao.getUserById");
 
@@ -96,7 +96,7 @@ public class UserDaoImpl implements UserDao {
     public boolean LogIn(String userName, String password)
     {
         try{
-            Query query = sessionFactory.getCurrentSession().createQuery("from User where name=:userName and password=:password");
+            Query query = sessionFactory.getCurrentSession().createQuery("from User where name=:userName and password=:password and isEnable=:true");
             query.setParameter("userName", userName );
             query.setParameter("password", password);
             User user = (User) query.uniqueResult();
@@ -134,7 +134,7 @@ public class UserDaoImpl implements UserDao {
                 UserDto userDto = new UserDto();
                 userDto.setId(user.getId());
                 userDto.setName(user.getName());
-                userDto.setEnable(user.getEnable());
+                userDto.setIsEnable(user.getIsEnable());
                 userListDto.add(userDto);
             }
 
