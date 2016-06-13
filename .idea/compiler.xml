@@ -28,7 +28,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SpringMVCHibernateTest" target="1.8" />
+      <module name="SpringMVCHibernateTest" target="1.5" />
       <module name="StoreSpringMVC" target="1.8" />
     </bytecodeTargetLevel>
   </component>
