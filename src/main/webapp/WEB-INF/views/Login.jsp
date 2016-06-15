@@ -12,7 +12,7 @@
       <div id="formsContent">
            <h4>User Login.</h4>
            <c:url var="addAction" value="/Login" ></c:url>
-           <form:form id="form" action="${addAction}" commandName="user">
+           <form:form class="login-form" id="form" action="${addAction}" commandName="user">
              <table>
                <tr><td>User Name:</td><td><input name="name" type="textbox"</td></tr>
                <tr><td>Password:</td><td><input name="password" type="password"</td></tr>
