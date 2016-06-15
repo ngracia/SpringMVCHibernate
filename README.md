@@ -8,5 +8,6 @@ Understanding Spring MVC &amp; Hibernate
 - MySql 5.7.12
 - Maven 3.0.5
 - Spring 4.2.6.RELEASE
+- Hibernate 5.2.0.Final
 - AngularJS 1.5.6 
 
