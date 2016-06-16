@@ -17,7 +17,6 @@ public class ImportCsvServiceImpl implements ImportCsvService{
     @Override
     @Transactional
     public RequestResponseDto importProductsListCsv(String path, String fileName) {
-        importCsvProductsDao.importProducts(path, fileName);
-        return null;
+        return importCsvProductsDao.importProducts(path, fileName);
     }
 }
