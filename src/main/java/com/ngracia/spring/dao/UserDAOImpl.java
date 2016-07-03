@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,11 +113,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public RequestResponseDto LogOut(String userName, String password) {
         try{
-
+            logger.info("Success: UserDao.LogOut");
         }catch (Exception ex){
-
+            logger.error("Failed: UserDao.LogOut: " + ex.getMessage());
         }
-        throw new NotImplementedException();
+        return null;
     }
 
 

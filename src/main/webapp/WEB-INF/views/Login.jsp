@@ -7,12 +7,15 @@
    <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <title>User Login.</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
    </head>
    <body>
-      <div id="formsContent">
+      <div class="formcontainer">
            <h4>User Login.</h4>
            <c:url var="addAction" value="/Login" ></c:url>
-           <form:form class="login-form" id="form" action="${addAction}" commandName="user">
+           <form:form class="form-control input-sm" id="form" action="${addAction}" commandName="user">
              <table>
                <tr><td>User Name:</td><td><input name="name" type="textbox"</td></tr>
                <tr><td>Password:</td><td><input name="password" type="password"</td></tr>
