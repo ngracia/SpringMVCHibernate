@@ -63,7 +63,7 @@
 
     <beans:bean id="userService" class="com.ngracia.spring.service.UserServiceImpl"></beans:bean>
 
-    <beans:bean id="importCsvProductsDao" class="com.ngracia.spring.dao.ImportCsvProductsDaoImpl"></beans:bean>
+    <beans:bean id="productsDao" class="com.ngracia.spring.dao.ProductsDaoImpl"></beans:bean>
 
     <beans:bean id="importCsvService" class="com.ngracia.spring.service.ImportCsvServiceImpl"></beans:bean>
 
