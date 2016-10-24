@@ -10,3 +10,4 @@ Understanding Spring MVC &amp; Hibernate
 - Spring 4.2.6.RELEASE
 - Hibernate 5.2.0.Final
 - AngularJS 1.5.6
+- Bootstrap 3.3.5
