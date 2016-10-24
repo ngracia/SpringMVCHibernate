@@ -5,22 +5,46 @@
 <%@ page session="false" %>
 <html>
    <head>
-       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <title>User Login.</title>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>User Login.</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
    </head>
    <body>
       <div class="formcontainer">
-           <h4>User Login.</h4>
            <c:url var="addAction" value="/Login" ></c:url>
-           <form:form class="form-control input-sm" id="form" action="${addAction}" commandName="user">
-             <table>
-               <tr><td>User Name:</td><td><input name="name" type="textbox"</td></tr>
-               <tr><td>Password:</td><td><input name="password" type="password"</td></tr>
-               <tr><td colspan="2" align="right"><input type="submit" value="Submit"></td></tr>
-             </table>
+           <form:form class="form-horizontal" id="form" action="${addAction}" commandName="user">
+            <fieldset>
+                <legend>
+                <center>
+                    Login Form
+                </center>
+                </legend>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="User">User Name</label>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input id="name" name="name" type="textBox" placeholder="Enter Your User" class="form-control input-md">
+                        </div>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label class="col-md-4 control-label" for="Password">Password</label>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input id="password" name="password" type="password" placeholder="Enter Your Password" class="form-control input-md">
+                        </div>
+                    </div>
+                </div>
+               <div class="form-group"><label class="col-md-4 control-label" for="Submit"></label>
+                   <div class="col-md-4"><button id="Submit" class="btn btn-success" type="Submit">Press To Validate</button></div>
+                </div>
+            </fieldset>
              <div style="color:red">${error}</div>
            </form:form>
       </div>
