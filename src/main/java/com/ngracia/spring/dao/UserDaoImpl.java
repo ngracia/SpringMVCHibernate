@@ -95,7 +95,7 @@ public class UserDaoImpl implements UserDao {
     public boolean LogIn(String userName, String password)
     {
         try{
-            Query query = sessionFactory.getCurrentSession().createQuery("from User where name=:userName and password=:password and isEnable=:true");
+            Query query = sessionFactory.getCurrentSession().createQuery("FROM User WHERE name=:userName AND password=:password");
             query.setParameter("userName", userName );
             query.setParameter("password", password);
             User user = (User) query.uniqueResult();
