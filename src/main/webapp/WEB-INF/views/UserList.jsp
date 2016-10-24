@@ -5,24 +5,36 @@
 <html>
 <head>
 	<title>User Page</title>
-	<style type="text/css">
-		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-		.tg .tg-4eph{background-color:#f9f9f9}
-	</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+    <script src="https://use.fontawesome.com/c929efb672.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3>Users List</h3>
-	<table class="tg">
-	<c:forEach items="${listUsers}" var="user">
-		<tr>
-			<td>${user.id}</td>
-			<td>${user.name}</td>
-			<td><a href="<c:url value='/Edit/${user.id}' />" >Edit</a></td>
-            <td><a href="<c:url value='/Delete/${user.id}' />" >Delete</a></td>
-		</tr>
-	</c:forEach>
-	</table>
+    <div class = "panel panel-primary">
+        <div class = "panel-heading">
+            <h2>Users List</h2>
+        </div>
+        <table class="table table-hover">
+        <thead>
+           <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Edit</th>
+             <th>Delete</th>
+           </tr>
+           </thead>
+           <tbody>
+            <c:forEach items="${listUsers}" var="user">
+                <tr>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td><a href="<c:url value='/Edit/${user.id}' />" ><i class="fa fa-pencil fa-fw"></a></td>
+                    <td><a href="<c:url value='/Delete/${user.id}' />" ><i class="fa fa-trash fa-fw"></a></td>
+                </tr>
+            </c:forEach>
+           </tbody>
+        </table>
+    </div>
 </body>
 </html>
