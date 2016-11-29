@@ -7,8 +7,17 @@
 	<title>User Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/c929efb672.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+           debugger;
+           console.log("ready!");
+           $("#delete").hide();
+           $("#edit").hide();
+        });
+     </script>
 </head>
 <body>
     <div class = "panel panel-primary">
@@ -20,8 +29,8 @@
            <tr>
              <th>Id</th>
              <th>Name</th>
-             <th>Edit</th>
-             <th>Delete</th>
+             <th id="edit">Edit</th>
+             <th id="delete">Delete</th>
            </tr>
            </thead>
            <tbody>

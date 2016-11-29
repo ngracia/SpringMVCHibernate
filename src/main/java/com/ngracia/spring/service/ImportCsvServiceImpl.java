@@ -1,6 +1,6 @@
 package com.ngracia.spring.service;
 
-import com.ngracia.spring.dao.ProductsDao;
+import com.ngracia.spring.dao.OLD.ProductsDao;
 import com.ngracia.spring.dto.ProductsDto;
 import com.ngracia.spring.dto.RequestResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -13,6 +13,7 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
    </head>
+
    <body>
       <div class="formcontainer">
            <c:url var="addAction" value="/Login" ></c:url>

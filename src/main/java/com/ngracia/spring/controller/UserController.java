@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Nestor Gracia on 24/05/2016.
  */
 @Controller
+@RequestMapping("/")
 public class UserController {
 
     @Autowired

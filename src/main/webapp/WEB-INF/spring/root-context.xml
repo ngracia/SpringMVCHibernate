@@ -59,13 +59,13 @@
         </beans:property>
     </beans:bean>
 
-    <beans:bean id="userDao" class="com.ngracia.spring.dao.UserDaoImpl"></beans:bean>
+   <!-- <beans:bean id="userDao" class="com.ngracia.spring.dao.OLD.UserDaoImpl"></beans:bean>
 
     <beans:bean id="userService" class="com.ngracia.spring.service.UserServiceImpl"></beans:bean>
 
-    <beans:bean id="productsDao" class="com.ngracia.spring.dao.ProductsDaoImpl"></beans:bean>
+    <beans:bean id="productsDao" class="com.ngracia.spring.dao.OLD.ProductsDaoImpl"></beans:bean>
 
-    <beans:bean id="importCsvService" class="com.ngracia.spring.service.ImportCsvServiceImpl"></beans:bean>
+    <beans:bean id="importCsvService" class="com.ngracia.spring.service.ImportCsvServiceImpl"></beans:bean>-->
 
     <context:component-scan base-package="com.ngracia.spring"/>
 
