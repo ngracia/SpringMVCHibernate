@@ -1,9 +1,7 @@
 package com.ngracia.spring.service;
 
-import com.ngracia.spring.dao.UserDao;
 import com.ngracia.spring.dto.RequestResponseDto;
 import com.ngracia.spring.dto.UserDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -13,13 +11,13 @@ import java.util.List;
  */
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserDao userDao;
+    /*@Autowired
+    private UserDao userDao;*/
 
     @Override
     @Transactional
     public void delete(int id) {
-        userDao.deleteUser(id);
+        /*userDao.deleteUser(id);*/
     }
 
     @Override
@@ -30,31 +28,31 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void updateUser(UserDto userDto) {
-        userDao.updateUser(userDto);
+        /*userDao.updateUser(userDto);*/
     }
 
     @Override
     @Transactional
     public UserDto getUser(int id) {
-        return userDao.getUserById(id);
+        return null; /*userDao.getUserById(id);*/
     }
 
     @Override
     @Transactional
     public boolean LogIn(String userName, String password) {
-        return userDao.LogIn(userName, password);
+        return false; /*userDao.LogIn(userName, password);*/
     }
 
     @Override
     @Transactional
     public RequestResponseDto LogOut(String userName, String password) {
-        return userDao.LogOut(userName, password);
+        return null; /*userDao.LogOut(userName, password);*/
     }
 
 
     @Override
     @Transactional
     public List<UserDto> getUsersList() {
-        return userDao.getUsersList();
+        return null; /*userDao.getUsersList();*/
     }
 }
