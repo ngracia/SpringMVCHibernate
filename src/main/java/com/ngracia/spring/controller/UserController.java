@@ -28,8 +28,9 @@ public class UserController {
 
     @RequestMapping(value= {"/Login"}, method=RequestMethod.POST)
     public String Login(@ModelAttribute("user") User u) {
-        boolean result = userService.LogIn(u.getName(), u.getPassword());
-        if (result){
+        User result = userService.LogIn(u.getName(), u.getPassword());
+
+        if (result.getName() == null){
             return "redirect:/UserList";
         }
         return "redirect:/";

@@ -1,6 +1,6 @@
-package com.ngracia.spring.dao.impl;
+package com.ngracia.spring.dao;
 
-import com.ngracia.spring.dao.IBaseDao;
+import com.ngracia.spring.dao.BaseDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
  * Created by dev on 29/11/16.
  */
 @Repository("baseDao")
-public class BaseDaoImpl<T> implements IBaseDao<T>{
+public class BaseDaoImpl<T> implements BaseDao<T> {
 
     private SessionFactory sessionFactory;
 
@@ -36,41 +36,21 @@ public class BaseDaoImpl<T> implements IBaseDao<T>{
 
     @Override
     public void delete(T t) {
-
+        this.getCurrentSession().delete(t);
     }
 
     @Override
     public void update(T t) {
-
+        this.getCurrentSession().update(t);
     }
 
     @Override
     public void saveOrUpdate(T t) {
-
+        this.getCurrentSession().saveOrUpdate(t);
     }
 
     @Override
-    public List<T> find(String hq) {
-        return null;
-    }
-
-    @Override
-    public List findSQL(String hq, Class T) {
-        return null;
-    }
-
-    @Override
-    public List findSQL(String hq) {
-        return null;
-    }
-
-    @Override
-    public List<T> find(String hq, Object[] param) {
-        return null;
-    }
-
-    @Override
-    public List<T> find(String hq, List<Object> param) {
-        return null;
+    public T get(String c, Serializable id) {
+        return (T) this.getCurrentSession().get(c, id);
     }
 }
