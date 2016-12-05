@@ -16,6 +16,6 @@ public interface BaseDao<T> {
 
     void saveOrUpdate(T t);
 
-    T get(String hql, Serializable id);
+    T get(String hql, Object[] param);
 
 }

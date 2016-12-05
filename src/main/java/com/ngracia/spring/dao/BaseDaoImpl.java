@@ -3,6 +3,7 @@ package com.ngracia.spring.dao;
 import com.ngracia.spring.dao.BaseDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.io.Serializable;
@@ -50,7 +51,22 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     @Override
-    public T get(String c, Serializable id) {
-        return (T) this.getCurrentSession().get(c, id);
+    public T get(String hql, Object[] param) {
+        List<T> l = this.find(hql, param);
+        if (l != null && l.size() > 0) {
+            return l.get(0);
+        } else {
+            return null;
+        }
+    }
+
+    public List<T> find(String hql, Object[] param) {
+        Query q = this.getCurrentSession().createQuery(hql);
+        if (param != null && param.length > 0) {
+            for (int i = 0; i < param.length; i++) {
+                q.setParameter(i, param[i]);
+            }
+        }
+        return q.list();
     }
 }

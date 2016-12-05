@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Nestor Gracia on 02/06/2016.
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
 
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User LogIn(String name, String password) {
-        return userDao.get("from user where name = ? and password = ?", new Object[] { name, password});
+        return userDao.get("from user u where u.name = ? and u.password = ?", new Object[] { name, password});
     }
 
     @Override
