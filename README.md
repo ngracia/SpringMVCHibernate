@@ -1,5 +1,5 @@
 # SpringMVCHibernate
-Understanding Spring MVC &amp; Hibernate
+Spring MVC &amp; Hibernate
 
 #Frameworks and tools.
 
