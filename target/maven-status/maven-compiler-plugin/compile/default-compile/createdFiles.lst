@@ -3,7 +3,6 @@ com/ngracia/spring/dto/UserDto.class
 com/ngracia/spring/service/UserService.class
 com/ngracia/spring/controller/UserController.class
 com/ngracia/spring/service/UserServiceImpl.class
-com/ngracia/spring/dto/ProductsDto.class
 com/ngracia/spring/model/User.class
 com/ngracia/spring/dao/BaseDaoImpl.class
 com/ngracia/spring/dao/BaseDao.class
