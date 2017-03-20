@@ -19,6 +19,10 @@
         <maven.surefire.version>2.19.1</maven.surefire.version>
         <commons-logging-version>1.1.3</commons-logging-version>
         <spring-webmvc-Version>3.2.6.RELEASE</spring-webmvc-Version>
+        <org.hibernate-version>5.2.5.Final</org.hibernate-version>
+        <hibernate-validator-version>5.3.4.Final</hibernate-validator-version>
+        <spring-orm-version>4.3.4.RELEASE</spring-orm-version>
+        <javax.servlet-api-version>1.2</javax.servlet-api-version>
     </properties>
 
     <build>
@@ -44,26 +48,27 @@
             <version>${org.springframework-version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>${commons-logging-version}</version>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+            <version>${org.springframework-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
 
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.1.9.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>4.2.6.RELEASE</version>
+            <version>${org.hibernate-version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>4.2.0.Final</version>
+            <version>${hibernate-validator-version}</version>
         </dependency>
 
         <!--Spring data JPA -->
@@ -116,6 +121,17 @@
             <version>3.2.0.RELEASE</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring-orm-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>3.2.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>jta</artifactId>
             <version>1.1</version>
@@ -123,7 +139,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <version>${javax.servlet-api-version}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -136,9 +152,10 @@
             <version>1.3.1</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-oxm</artifactId>
-            <version>3.2.0.RELEASE</version>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging-version}</version>
         </dependency>
+
     </dependencies>
 </project>
