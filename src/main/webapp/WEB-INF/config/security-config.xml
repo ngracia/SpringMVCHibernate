@@ -34,7 +34,7 @@
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <beans:property name="url" value="jdbc:mysql://localhost:3306/SpringMVCHibernate"/>
         <beans:property name="username" value="root"/>
-        <beans:property name="password" value="5621Esware"/>
+        <beans:property name="password" value=""/>
     </beans:bean>
 
 
